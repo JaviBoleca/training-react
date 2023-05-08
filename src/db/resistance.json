@@ -1,0 +1,20 @@
+[
+    {
+      "name": "John",
+      "age": "23",
+      "role": "leader",
+      "enemy": "Skynet"
+    },
+    {
+      "name": "Sarah",
+      "age": "39",
+      "role": "John's mother",
+      "enemy": "Cyberdyne Systems"
+    },
+    {
+      "name": "Marcus",
+      "age": "35",
+      "role": "Soldier",
+      "enemy": "Skynet"
+    }
+  ]

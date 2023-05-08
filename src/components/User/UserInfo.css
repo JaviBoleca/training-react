@@ -1,0 +1,20 @@
+.UserInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1em auto;
+  width: 90%;
+  max-width: 500px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: var(--blue);
+  box-shadow: 0 2px 3px #ccc;
+}
+
+.UserInfo-name{
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0.5em 0;
+}

@@ -1,20 +1,13 @@
-// import "./App.css";
-import Character from "./components/Characters/Character";
-import resistance from "./db/db.json";
+import Avengers from "./components/User/Avengers";
+import Terminator from "./components/Characters/Terminator";
+import SplitPane from "./components/Wrapper/SplitPane";
 
 const App = () => {
   return (
     <>
-      {resistance.map((character) => {
-        return (
-          <Character
-            name={character.name}
-            age={character.age}
-            role={character.role}
-            enemy={character.enemy}
-          />
-        );
-      })}
+      {/* <Avengers />
+      <Terminator /> */}
+      <SplitPane left={<Terminator />} right={<Avengers />} />
     </>
   );
 };

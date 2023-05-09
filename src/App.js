@@ -1,15 +1,7 @@
-import Avengers from "./components/User/Avengers";
-import Terminator from "./components/Characters/Terminator";
-import SplitPane from "./components/Wrapper/SplitPane";
+import "./Card.js"
 
 const App = () => {
-  return (
-    <>
-      {/* <Avengers />
-      <Terminator /> */}
-      <SplitPane left={<Terminator />} right={<Avengers />} />
-    </>
-  );
-};
+  return }
 
+  
 export default App;

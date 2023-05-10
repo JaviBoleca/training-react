@@ -1,24 +1,28 @@
-import Card from "./components/Card";
-import freelance from "./db/freelance.json";
+import "./App.css";
+import CardWrapper from "./components/Card/CardWrapper";
+import CardImg from "./components/Card/CardImg";
+import CardInfo from "./components/Card/CardInfo";
+import CardsContainer from "./components/Card/CardsContainer";
+import { freelancers } from "./db/freelancers";
 
-const App = () => {
+function App() {
   return (
-    <>
-      {freelance.map((card, index) => {
+    <CardsContainer>
+      {freelancers.map((freelancer) => {
         return (
-          <Card
-            key={index}
-            image={card.image}
-            title={card.title}
-            lastname={card.lastname}
-            role={card.role}
-            fee={card.fee}
-            reviews={card.reviews}
-          />
+          <CardWrapper key={freelancer.id}>
+            <CardImg img={freelancer.img}></CardImg>
+            <CardInfo
+              title={freelancer.title}
+              last_name={freelancer.last_name}
+              fee={freelancer.fee}
+              reviews={freelancer.reviews}
+            ></CardInfo>
+          </CardWrapper>
         );
       })}
-    </>
+    </CardsContainer>
   );
-};
+}
 
 export default App;

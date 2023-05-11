@@ -1,9 +1,12 @@
-import Limpio from "./componentes/limpio/Limpio";
-// import Limpio2 from "./componentes/limpio2/Limpio2";
+import "./App.css";
 
 const App = () => {
-    return <Limpio />;
-    // return <Limpio2 />;
+  return (
+    <div>
+      <div className="name">
+        <h1>Transactions</h1>
+      </div>
+    </div>
+  );
 };
-
 export default App;

@@ -1,6 +1,13 @@
+.main{
+    background-color: brown;
+    height: 100vh;
+    width: 50vw;
+}
+
 button{
     background-color: aquamarine;
     padding: 0.5em 1em;
     border-radius: 0.3rem;
     font-size: 1.2rem;
+    color: blue;
 }

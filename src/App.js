@@ -1,9 +1,8 @@
-import Limpio from "./componentes/limpio/Limpio";
-// import Limpio2 from "./componentes/limpio2/Limpio2";
+import Cohete from "./componentes/Cohete/Cohete"
 
 const App = () => {
-    return <Limpio />;
-    // return <Limpio2 />;
+    return <Cohete />;
+   
 };
 
 export default App;

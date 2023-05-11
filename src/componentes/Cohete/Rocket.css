@@ -1,0 +1,36 @@
+button {
+  background-color: var(--blue);
+  padding: .5em 1em;
+  border-radius: .3rem;
+  font-size: 1.2rem;
+}
+
+h3 {
+  transition: all 3s cubic-bezier(1,-0.01,0,.99);
+}
+h3 span {
+  display: inline-block;
+  margin: 1em 0;
+  padding: .3em .5em;
+  background-color: var(--blue);
+  border: 1px solid var(--dark);
+  border-radius: .5rem;
+  font-size: 5rem;
+}
+.yellow {
+  background-color: var(--yellow);
+}
+.red {
+  background-color: var(--red);
+}
+.move {
+  transform: translateY(-500px);
+}
+.pane {
+  display: inline-block;
+  border: 3px solid var(--dark);
+  border-radius: .5rem;
+  padding: .3em .5em;
+  color: white;
+  font-style: italic;
+}

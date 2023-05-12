@@ -1,9 +1,7 @@
-import Limpio from "./componentes/limpio/Limpio";
-// import Limpio2 from "./componentes/limpio2/Limpio2";
+import Comp1 from "./components/Comp1";
 
 const App = () => {
-    return <Limpio />;
-    // return <Limpio2 />;
+  return <Comp1 />;
 };
 
 export default App;

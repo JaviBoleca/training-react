@@ -1,0 +1,44 @@
+.styleSum {
+  background-color: rebeccapurple;
+  height: 10vh;
+  color: white;
+  font-size: 2rem;
+  font-weight: 900;
+  border: 3px solid black;
+  border-radius: 35px;
+  cursor: pointer;
+  padding-left: 2em;
+  padding-right: 2em;
+  align-items: center;
+  width: 50%;
+  
+
+}
+.styleDiv {
+  background-color: rgb(51, 133, 153);
+  height: 10vh;
+  color: white;
+  font-size: 2rem;
+  font-weight: 900;
+  border: 3px solid black;
+  border-radius: 35px;
+  cursor: pointer;
+  padding-left: 2em;
+  padding-right: 2em;
+  align-items: center;
+  width: 50%;
+ 
+}
+.conteneBot {
+  padding-top: 2em;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  align-items: center;
+  width: 100%;
+  background-color: white;
+  justify-content: center;
+  width: 40%;
+  margin: auto;
+
+}

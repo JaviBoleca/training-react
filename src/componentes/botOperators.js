@@ -1,16 +1,15 @@
 import "./botOperators.css";
 
-const BotOperators = ({ botSum,botDiv }) => {
+const Boton = ({ texto, esBotonDeClic, manejarClic }) => {
   return (
     <div className="conteneBot">
-      <button className="styleSum" onClick={botSum}>
-        Botón de Suma
-      </button>
-      <button className="styleDiv" onClick={botDiv}>
-        Botón de División
+      <button
+        className={esBotonDeClic ? "boton-clic" : "boton-reiniciar"}
+        onClick={manejarClic}
+      >
+        {texto}
       </button>
     </div>
   );
 };
-
-export default BotOperators;
+export default Boton;

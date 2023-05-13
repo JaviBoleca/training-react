@@ -1,17 +1,19 @@
 import Counter from "./componentes/Counter";
 import "./App.css";
-import BotOperators from "./componentes/botOperators";
+import Boton from "./componentes/botOperators";
 import { useState } from "react";
 
 const App = () => {
-  const [num, setNum] = useState("");
+  const [num, setNum] = useState(0);
 
-  const handleSum = () => {
-    setNum("hola");
+  const manejarClic = () => {
+    setNum(num + 1);
   };
-  const handleDiv = () => {
-    // setNum(num / 5);
-    console.log("División");
+  const dividirContador = () => {
+    setNum(num / 2);
+  };
+  const reiniciarContador = () => {
+    setNum(0);
   };
 
   return (
@@ -21,7 +23,18 @@ const App = () => {
       </div>
       <div>
         <Counter num={num} />
-        <BotOperators botsum={handleSum} botdiv={handleDiv} />
+        <Boton texto="Clic" esBotonDeClic={true} manejarClic={manejarClic} />
+        <Boton
+          texto="Dividir por 2"
+          esBotonDeClic={true}
+          manejarClic={dividirContador}
+        />
+        <Boton
+          texto="Reiniciar"
+          esBotonDeClic={false}
+          manejarClic={reiniciarContador}
+        />
+       
       </div>
     </>
   );

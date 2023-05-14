@@ -1,30 +1,13 @@
-import Counter from "./componentes/Counter";
-import "./App.css";
-import BotOperators from "./componentes/botOperators";
-import { useState } from "react";
+import Wrapp from "./componentes/wrapp";
 
 const App = () => {
-  const [num, setNum] = useState("");
-
-  const handleSum = () => {
-    setNum("hola");
-  };
-  const handleDiv = () => {
-    // setNum(num / 5);
-    console.log("División");
-  };
-
   return (
-    <>
-      <div className="divStyle">
-        <h1 style={{ color: "white" }}>SuperMachine! XP</h1>
-      </div>
-      <div>
-        <Counter num={num} />
-        <BotOperators botsum={handleSum} botdiv={handleDiv} />
-      </div>
-    </>
+    <div>
+      <Wrapp>
+      <h1>Hello React</h1>
+      <p>React is awesome!</p>
+      </Wrapp>
+    </div>
   );
-};
-
-export default App;
+}
+export default App; 

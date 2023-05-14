@@ -1,0 +1,14 @@
+.wrapp {
+  width: 50%;
+  height: 50vh;
+  background-color: aquamarine;
+  font-size: 3em;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+  color: rgb(239, 170, 193);
+  padding: 2em;
+  border: 4px solid wheat;
+  margin-top: 4em;
+  border-radius: 35px;
+}

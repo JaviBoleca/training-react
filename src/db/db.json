@@ -1,0 +1,398 @@
+[
+    {
+      "category": "bill",
+      "data": {
+        "title": "Monthly Grocery Shopping",
+        "date": "15/01/2023"
+      },
+      "money": {
+        "amount": 100,
+        "income": false
+      }
+    },
+    {
+      "category": "transfer",
+      "data": {
+        "title": "Rent Payment",
+        "date": "25/01/2023"
+      },
+      "money": {
+        "amount": 800,
+        "income": false
+      }
+    },
+    {
+      "category": "electricity",
+      "data": {
+        "title": "Electricity Bill",
+        "date": "30/01/2023"
+      },
+      "money": {
+        "amount": 50,
+        "income": false
+      }
+    },
+    {
+      "category": "incoming",
+      "data": {
+        "title": "Freelance Project Payment",
+        "date": "05/02/2023"
+      },
+      "money": {
+        "amount": 500,
+        "income": true
+      }
+    },
+    {
+      "category": "car",
+      "data": {
+        "title": "Car Maintenance",
+        "date": "15/02/2023"
+      },
+      "money": {
+        "amount": 150,
+        "income": false
+      }
+    },
+    {
+      "category": "bizum",
+      "data": {
+        "title": "Bizum Payment to Friend",
+        "date": "25/02/2023"
+      },
+      "money": {
+        "amount": 30,
+        "income": false
+      }
+    },
+    {
+      "category": "bill",
+      "data": {
+        "title": "Internet Subscription",
+        "date": "10/03/2023"
+      },
+      "money": {
+        "amount": 60,
+        "income": false
+      }
+    },
+    {
+      "category": "incoming",
+      "data": {
+        "title": "Salary Deposit",
+        "date": "15/03/2023"
+      },
+      "money": {
+        "amount": 2000,
+        "income": true
+      }
+    },
+    {
+      "category": "transfer",
+      "data": {
+        "title": "Loan Repayment",
+        "date": "28/03/2023"
+      },
+      "money": {
+        "amount": 300,
+        "income": false
+      }
+    },
+    {
+      "category": "electricity",
+      "data": {
+        "title": "Energy Bill",
+        "date": "05/04/2023"
+      },
+      "money": {
+        "amount": 40,
+        "income": false
+      }
+    },
+    {
+      "category": "car",
+      "data": {
+        "title": "Fuel Purchase",
+        "date": "20/04/2023"
+      },
+      "money": {
+        "amount": 50,
+        "income": false
+      }
+    },
+    {
+      "category": "incoming",
+      "data": {
+        "title": "Freelance Web Design",
+        "date": "25/04/2023"
+      },
+      "money": {
+        "amount": 400,
+        "income": true
+      }
+    },
+    {
+      "category": "bizum",
+      "data": {
+        "title": "Bizum Payment to Family",
+        "date": "10/05/2023"
+      },
+      "money": {
+        "amount": 20,
+        "income": false
+      }
+    },
+    {
+      "category": "bill",
+      "data": {
+        "title": "Phone Bill",
+        "date": "20/05/2023"
+      },
+      "money": {
+        "amount": 30,
+        "income": false
+      }
+    },
+    {
+      "category": "transfer",
+      "data": {
+        "title": "Investment Deposit",
+        "date": "28/05/2023"
+      },
+      "money": {
+        "amount": 500,
+        "income": false
+      }
+    },
+    {
+      "category": "electricity",
+      "data": {
+        "title": "Energy Bill",
+        "date": "05/06/2023"
+      },
+      "money": {
+        "amount": 40,
+        "income": false
+      }
+    },
+    {
+      "category": "car",
+      "data": {
+        "title": "Car Insurance Payment",
+        "date": "15/06/2023"
+      },
+      "money": {
+        "amount": 120,
+        "income": false
+      }
+    },
+    {
+      "category": "incoming",
+      "data": {
+        "title": "Consulting Service Payment",
+        "date": "25/06/2023"
+      },
+      "money": {
+        "amount": 300,
+        "income": true
+      }
+    },
+    {
+      "category": "bill",
+      "data": {
+        "title": "Subscription Renewal",
+        "date": "10/07/2023"
+      },
+      "money": {
+        "amount": 15,
+        "income": false
+      }
+    },
+    {
+      "category": "incoming",
+      "data": {
+        "title": "Bonus Payment",
+        "date": "15/07/2023"
+      },
+      "money": {
+        "amount": 1000,
+        "income": true
+      }
+    },
+    {
+      "category": "transfer",
+      "data": {
+        "title": "Debt Repayment",
+        "date": "28/07/2023"
+      },
+      "money": {
+        "amount": 200,
+        "income": false
+      }
+    },
+    {
+      "category": "electricity",
+      "data": {
+        "title": "Energy Bill",
+        "date": "05/08/2023"
+      },
+      "money": {
+        "amount": 40,
+        "income": false
+      }
+    },
+    {
+      "category": "car",
+      "data": {
+        "title": "Car Maintenance",
+        "date": "15/08/2023"
+      },
+      "money": {
+        "amount": 150,
+        "income": false
+      }
+    },
+    {
+      "category": "bizum",
+      "data": {
+        "title": "Bizum Payment to Friend",
+        "date": "25/08/2023"
+      },
+      "money": {
+        "amount": 30,
+        "income": false
+      }
+    },
+    {
+      "category": "bill",
+      "data": {
+        "title": "Internet Subscription",
+        "date": "10/09/2023"
+      },
+      "money": {
+        "amount": 60,
+        "income": false
+      }
+    },
+    {
+      "category": "incoming",
+      "data": {
+        "title": "Salary Deposit",
+        "date": "15/09/2023"
+      },
+      "money": {
+        "amount": 2000,
+        "income": true
+      }
+    },
+    {
+      "category": "transfer",
+      "data": {
+        "title": "Loan Repayment",
+        "date": "28/09/2023"
+      },
+      "money": {
+        "amount": 300,
+        "income": false
+      }
+    },
+    {
+      "category": "electricity",
+      "data": {
+        "title": "Energy Bill",
+        "date": "05/10/2023"
+      },
+      "money": {
+        "amount": 40,
+        "income": false
+      }
+    },
+    {
+      "category": "car",
+      "data": {
+        "title": "Fuel Purchase",
+        "date": "20/10/2023"
+      },
+      "money": {
+        "amount": 50,
+        "income": false
+      }
+    },
+    {
+      "category": "incoming",
+      "data": {
+        "title": "Freelance Web Design",
+        "date": "25/10/2023"
+      },
+      "money": {
+        "amount": 400,
+        "income": true
+      }
+    },
+    {
+      "category": "bizum",
+      "data": {
+        "title": "Bizum Payment to Family",
+        "date": "10/11/2023"
+      },
+      "money": {
+        "amount": 20,
+        "income": false
+      }
+    },
+    {
+      "category": "bill",
+      "data": {
+        "title": "Phone Bill",
+        "date": "20/11/2023"
+      },
+      "money": {
+        "amount": 30,
+        "income": false
+      }
+    },
+    {
+      "category": "transfer",
+      "data": {
+        "title": "Investment Deposit",
+        "date": "28/11/2023"
+      },
+      "money": {
+        "amount": 500,
+        "income": false
+      }
+    },
+    {
+      "category": "electricity",
+      "data": {
+        "title": "Energy Bill",
+        "date": "05/12/2023"
+      },
+      "money": {
+        "amount": 40,
+        "income": false
+      }
+    },
+    {
+      "category": "car",
+      "data": {
+        "title": "Car Insurance Payment",
+        "date": "15/12/2023"
+      },
+      "money": {
+        "amount": 120,
+        "income": false
+      }
+    },
+    {
+      "category": "incoming",
+      "data": {
+        "title": "Consulting Service Payment",
+        "date": "25/12/2023"
+      },
+      "money": {
+        "amount": 300,
+        "income": true
+      }
+    }
+  ]

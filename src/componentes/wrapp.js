@@ -1,7 +1,13 @@
 import "./wrapp.css";
 
 const Wrapp = (props) => {
-  return <div className="wrapp" >{props.children}</div>;
+  const poneBye = value => {
+    return "Bye" === value;
+  };
 
+  return(
+  <div className={`wrapp ${poneBye(props.children) ? "wrappBye" : null}`}>
+    {props.children}
+  </div>)
 };
 export default Wrapp;

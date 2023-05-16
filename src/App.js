@@ -1,19 +1,26 @@
 import Counter from "./componentes/Counter";
 import "./App.css";
 import Boton from "./componentes/botOperators";
+import BotonCalc from "./componentes/botCalc";
 import { useState } from "react";
 
 const App = () => {
-  const [num, setNum] = useState(0);
+  const [num, setNum] = useState("");
 
-  const manejarClic = () => {
+  const sumar1Clic = () => {
     setNum(num + 1);
   };
   const dividirContador = () => {
     setNum(num / 2);
   };
   const reiniciarContador = () => {
-    setNum(0);
+    setNum("");
+  };
+  //en este otro caso en vez de darle un valor a la variable num,
+  //le damos una funcion que recibe como parametro el valor anterior de num
+  //y devuelve el nuevo valor de num
+  const calculadora = (val) => {
+    setNum(num * val);
   };
 
   return (
@@ -23,7 +30,7 @@ const App = () => {
       </div>
       <div>
         <Counter num={num} />
-        <Boton texto="Clic" esBotonDeClic={true} manejarClic={manejarClic} />
+        <Boton texto="Clic" esBotonDeClic={true} manejarClic={sumar1Clic} />
         <Boton
           texto="Dividir por 2"
           esBotonDeClic={true}
@@ -34,7 +41,9 @@ const App = () => {
           esBotonDeClic={false}
           manejarClic={reiniciarContador}
         />
-       
+        <BotonCalc manejarClicVal={calculadora}>
+          5
+        </BotonCalc>
       </div>
     </>
   );

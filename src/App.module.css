@@ -1,0 +1,22 @@
+.header {
+    composes: flex-column from './index.css';
+    font-size: 1.7em;
+    padding: 4em;
+    background-color: #556B2F;
+    text-align: center;
+    }
+    .sky {
+    font-size: 1.5em;
+    text-align: center;
+    color: #F0F8FF;
+    margin-bottom: 1rem;
+    }
+    .sky:hover {
+    color: #87CEEB;
+    }
+    .featured {
+    color: #9ACD32;
+    }
+    .darkTheme {
+    background-color: #2F4F4F;
+    }

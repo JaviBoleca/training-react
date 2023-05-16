@@ -12,18 +12,17 @@
   margin-top: 2em;
   border-radius: 35px;
 }
-.wrappBye{
-    width: 50%;
-    height: 30vh;
-    background-color:blueviolet;
-    font-size: 3em;
-    justify-content: center;
-    margin: auto;
-    text-align: center;
-    color: rgb(239, 170, 193);
-    padding: 2em;
-    border: 4px solid wheat;
-    margin-top: 2em;
-    border-radius: 35px;
-    display: none;
+.wrappBye {
+  width: 50%;
+  height: 30vh;
+  background-color: rgb(127, 206, 255);
+  font-size: 4em;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+  color: rgb(234, 219, 224);
+  padding: 2em;
+  border: 4px solid wheat;
+  margin-top: 2em;
+  border-radius: 35px;
 }

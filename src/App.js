@@ -11,7 +11,7 @@ const App = () => {
       </div>
       <div>
         <Wrapp>
-         Bye
+          Bye
         </Wrapp>
       </div>
     </>

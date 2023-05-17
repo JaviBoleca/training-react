@@ -1,0 +1,122 @@
+[
+  {
+    "id": "c4a712e3-1db5-432c-a905-5f968f05c685",
+    "productName": "Modern Sofa",
+    "categories": ["Living Room", "Furniture"],
+    "price": 499.99
+  },
+  {
+    "id": "558e9ac7-7ff0-4051-ad0a-67be2da6bb0e",
+    "productName": "Wooden Dining Table",
+    "categories": ["Dining Room", "Furniture"],
+    "price": 799.99
+  },
+  {
+    "id": "da8d4f79-29ef-4519-9af9-7028a7d35b2f",
+    "productName": "Leather Recliner Chair",
+    "categories": ["Living Room", "Furniture"],
+    "price": 299.99
+  },
+  {
+    "id": "68b5ecce-685e-4f12-a2ac-c2b1b10ca49a",
+    "productName": "Bed Frame with Storage",
+    "categories": ["Bedroom", "Furniture"],
+    "price": 699.99
+  },
+  {
+    "id": "6f9c30cf-b876-43d7-aa22-a4403be7b609",
+    "productName": "Glass Coffee Table",
+    "categories": ["Living Room", "Furniture"],
+    "price": 199.99
+  },
+  {
+    "id": "e9d39617-e7a5-45bb-b9f2-d497e6d9875d",
+    "productName": "Bookshelf",
+    "categories": ["Study Room", "Furniture"],
+    "price": 249.99
+  },
+  {
+    "id": "60f7ad80-fcfd-4d57-8d29-8ee5e3b9c275",
+    "productName": "Console Table",
+    "categories": ["Entryway", "Furniture"],
+    "price": 179.99
+  },
+  {
+    "id": "e2a4d37f-9607-4d15-b364-975554e148cc",
+    "productName": "Armchair",
+    "categories": ["Living Room", "Furniture"],
+    "price": 349.99
+  },
+  {
+    "id": "e582a4f5-8715-495c-b2f5-5a33e8db4f74",
+    "productName": "Wardrobe",
+    "categories": ["Bedroom", "Furniture"],
+    "price": 899.99
+  },
+  {
+    "id": "f2f33e5a-a2a1-454e-b86c-11dc461371f5",
+    "productName": "Study Desk",
+    "categories": ["Study Room", "Furniture"],
+    "price": 149.99
+  },
+  {
+    "id": "c7fcd66b-c424-44bc-87c7-d20a1d81b766",
+    "productName": "Bar Stool",
+    "categories": ["Kitchen", "Furniture"],
+    "price": 79.99
+  },
+  {
+    "id": "22f66e3f-f009-48d7-b3f7-1a1edf0dd92d",
+    "productName": "Lounge Chair",
+    "categories": ["Living Room", "Furniture"],
+    "price": 449.99
+  },
+  {
+    "id": "58a1f148-c823-4fd6-b804-be08d2a5b376",
+    "productName": "Sideboard",
+    "categories": ["Dining Room", "Furniture"],
+    "price": 599.99
+  },
+  {
+    "id": "8b82b25f-2c81-44ec-b804-7bce86df6f62",
+    "productName": "Bedside Table",
+    "categories": ["Bedroom", "Furniture"],
+    "price": 129.99
+  },
+  {
+    "id": "c38c4a9f-406b-4f81-b234-1ad75ba5c8c7",
+    "productName": "TV Stand",
+    "categories": ["Living Room", "Furniture"],
+    "price": 349.99
+  },
+  {
+    "id": "e3fa8f39-acee-4558-849d-2bdde98ce92f",
+    "productName": "Dresser",
+    "categories": ["Bedroom", "Furniture"],
+    "price": 399.99
+  },
+  {
+    "id": "a20a4938-cfb5-479e-966b-bbb34712525f",
+    "productName": "Shoe Rack",
+    "categories": ["Entryway", "Furniture"],
+    "price": 99.99
+  },
+  {
+    "id": "a5569bbd-08e0-4127-94e1-40c6e2d43021",
+    "productName": "Bar Cabinet",
+    "categories": ["Kitchen", "Furniture"],
+    "price": 299.99
+  },
+  {
+    "id": "3e63fe0d-88ed-4daa-8dd9-ad33f1165727",
+    "productName": "Accent Chair",
+    "categories": ["Living Room", "Furniture"],
+    "price": 199.99
+  },
+  {
+    "id": "a6525bb9-8786-4ffb-88f6-51482447e6ee",
+    "productName": "Chest of Drawers",
+    "categories": ["Bedroom", "Furniture"],
+    "price": 349.99
+  }
+]

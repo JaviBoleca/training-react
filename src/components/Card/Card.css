@@ -1,0 +1,31 @@
+.card {
+  background-color: var(--dark);
+  border-radius: 0.5rem;
+  padding: 1em 1.5em;
+  color: var(--gray);
+  margin-bottom: 1.5em;
+}
+.card h2 {
+  text-align: center;
+}
+.card h2 span {
+  color: var(--red);
+}
+
+.card ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+.card ul li {
+  font-size: 1.5rem;
+}
+.card ul li:first-of-type {
+  margin-right: 1em;
+}
+.card ul li:first-of-type::after {
+  content: " -";
+  margin-left: 0.8em;
+  color: var(--red);
+}

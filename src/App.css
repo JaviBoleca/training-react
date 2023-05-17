@@ -1,0 +1,7 @@
+header,main {
+    background-color: var(--green);
+    padding: 2em 1em;
+}
+main {
+    background-color: var(--grey);
+}

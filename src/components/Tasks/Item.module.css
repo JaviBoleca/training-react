@@ -1,0 +1,10 @@
+.task-item {
+  border-bottom: 1px solid #e4e4e4;
+  background-color: #e1e1e1;
+  background-color: #e0e0e0;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+.even {
+  background-color: #FAFAFA;
+}

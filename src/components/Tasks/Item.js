@@ -1,6 +1,6 @@
 import classes from './Item.module.css';
 
-const Item = props => {
+const Item = props=> {
 
   const deleteHandler = () => {
     props.onDelete(props.id);

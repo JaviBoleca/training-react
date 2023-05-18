@@ -1,7 +1,10 @@
-import Comp1 from "./components/Comp1";
+// import './App.css';
+import LoginPage from './views/Login/LoginPage';
 
-const App = () => {
-  return <Comp1 />;
-};
+function App() {
+  return (      
+      <LoginPage />
+  );
+}
 
 export default App;

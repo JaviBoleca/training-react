@@ -6,6 +6,7 @@ import classes from './App.module.css';
 
 const App = () => {
   const [tasks, setNewTask] = useState(data);
+  
 
   const addTaskHandler = enteredText => {
     setNewTask(prevTasks => {

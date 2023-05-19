@@ -1,12 +1,19 @@
-import Counter from "./components/Counter/Counter";
-import Todo from "./components/Todo/Todo";
-const App = () => {
+import "./App.css";
+import { ThemeProvider } from "./context/ThemeContext";
+import Button from "./components/Button/Button";
+
+function App() {
   return (
-    /* <Counter /> */
-    <>
-    <Todo />
-    </>
+    <div
+      style={{
+        padding: "1em",
+      }}
+    >
+      <ThemeProvider>
+        <Button />
+      </ThemeProvider>
+    </div>
   );
-};
+}
 
 export default App;

@@ -1,4 +1,4 @@
-import  ThemedButton  from "../Button/ThemedButton";
+import ThemedButton from "../Button/ThemedButton";
 
 const Toolbar = () => {
   return (

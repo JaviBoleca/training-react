@@ -8,7 +8,7 @@ const Button = () => {
   return (
     <button
       className={`${classes.button} ${
-        theme === "light" ? classes.light : classes.dark
+        theme === "light" ? classes.dark : classes.light
       }`}
       onClick={toggleTheme}
     >

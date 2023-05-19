@@ -12,7 +12,7 @@ const ThemedButton = () => {
   return (
     <button
       onClick={() => {
-        if (state === theme.light) {
+        if (state == theme.light) {
           dispatch({ type: actions.DARK });
         } else {
           dispatch({ type: actions.LIGHT });
@@ -30,4 +30,5 @@ const ThemedButton = () => {
     </button>
   );
 };
+
 export default ThemedButton;

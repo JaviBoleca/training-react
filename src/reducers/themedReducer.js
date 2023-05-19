@@ -1,4 +1,3 @@
-// reducer code
 const initialState = {
   light: {
     textColor: "#000",
@@ -11,7 +10,7 @@ const initialState = {
 };
 
 const actions = {
-  LIGHT: "LIGHT",
+  LIGHT: "lIGHT",
   DARK: "DARK",
 };
 

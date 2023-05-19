@@ -13,7 +13,7 @@
 }
 
 .form-control input:focus {
-  background: #4954ac;
+  background: #afb3d7;
   border-color: #2A41E8;
   box-shadow: rgba(42, 65, 232, 0.05) 0px 1px 0px, rgba(100, 118, 234, 0.1) 0px 0px 8px;
   transition: all .3s ease-out;

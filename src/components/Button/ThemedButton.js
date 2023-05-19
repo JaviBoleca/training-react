@@ -1,13 +1,18 @@
-import { useContext, useReducer } from "react";
-import { SwitchThemeContext } from "../../App";
+import { useContext } from "react";
+import { SwitchThemeContext } from "../../context/SwitchThemeContext";
 
 const ThemedButton = () => {
-  const { initialState, actions, reducer } = useContext(SwitchThemeContext);
-  const [state, dispatch] = useReducer(reducer, initialState.light);
+  const {
+    initialState: theme,
+    actions,
+    state,
+    dispatch,
+  } = useContext(SwitchThemeContext);
+
   return (
     <button
       onClick={() => {
-        if (state === initialState.light) {
+        if (state === theme.light) {
           dispatch({ type: actions.DARK });
         } else {
           dispatch({ type: actions.LIGHT });

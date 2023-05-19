@@ -1,5 +1,3 @@
-taskReducer.js
-```jsx
 import db from "../db/db.json";
 
 const initialState = {
@@ -13,6 +11,7 @@ const actions = {
 };
 
 const taskReducer = (state, payload) => {
+    console.log(payload);
   switch (payload.action) {
     case actions.ADD_TASK:
       return {
@@ -31,6 +30,7 @@ const taskReducer = (state, payload) => {
             ? { ...task, done: !task.done }
             : task;
         }),
+
       };
     default:
       return { tasks: state.tasks };
@@ -38,4 +38,3 @@ const taskReducer = (state, payload) => {
 };
 
 export { initialState, actions, taskReducer };
-```

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import TaskList from "./components/Tasks/TasksList";
 import TasksInput from "./components/Tasks/TasksInput";
@@ -15,13 +14,13 @@ const App = () => {
     setError(null);
     try {
       const response = await fetch(
-        // "https://task-list-4df55-default-rtdb.europe-west1.firebasedatabase.app/tasks.json"
+        "https://task-list-4df55-default-rtdb.europe-west1.firebasedatabase.app/tasks.json"
       );
       if (!response.ok) {
         throw new Error("Something went wrong!");
       }
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       setNewTask(data);
     } catch (error) {
       setError({
@@ -34,44 +33,96 @@ const App = () => {
     //setPending(false);
   };
 
-  const addTaskHandler = (enteredText) => {
-    setNewTask((prevTasks) => {
-      const updatedTasks = [...prevTasks];
-      updatedTasks.unshift({
-        text: enteredText,
-        id: Math.random().toString(16).substring(2),
+  const postTasksHandler = async (task) => {
+    setPending(true);
+    setError(null);
+    try {
+      const response = await fetch(
+        "https://task-list-4df55-default-rtdb.europe-west1.firebasedatabase.app/tasks.json",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(task),
+        }
+      );
+      if (!response.ok) {
+        throw new Error("Something went wrong! Can't add new task.");
+      }
+      fetchTasksHandler();
+    } catch (error) {
+      setError({
+        message: error.message || "Something went wrong!",
       });
-      return updatedTasks;
-    });
+    }
+
+    setPending(false);
   };
 
-  const deleteItemHandler = (taskId) => {
-    setNewTask((prevTasks) => {
-      const updatedTasks = prevTasks.filter((task) => task.id !== taskId);
-      return updatedTasks;
-    });
+  const addTaskHandler = (enteredText) => {
+    let newTask = {
+      text: enteredText,
+      id: Math.random().toString(16).substring(2),
+    };
+    postTasksHandler(newTask);
+  };
+
+  const deleteItemHandler = async (taskId) => {
+    setPending(true);
+    setError(null);
+    try {
+      const response = await fetch(
+        `https://task-list-4df55-default-rtdb.europe-west1.firebasedatabase.app/tasks/${taskId}.json`,
+        {
+          method: "DELETE",
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Something went wrong! Can't delete task.");
+      }
+
+      fetchTasksHandler();
+    } catch (error) {
+      setError({
+        message: error.message || "Something went wrong!",
+      });
+    }
+    setPending(false);
+  };
+
+  const updateItemHandler = async (id,text) => {
+    setPending(true);
+    setError(null);
+    try {
+      const response = await fetch(
+        `https://task-list-4df55-default-rtdb.europe-west1.firebasedatabase.app/tasks/${id}.json`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({text}),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Something went wrong! Can't update task.");
+      }
+
+      fetchTasksHandler();
+    } catch (error) {
+      setError({
+        message: error.message || "Something went wrong!",
+      });
+    }
+    setPending(false);
   };
 
   useEffect(() => {
     fetchTasksHandler();
   }, []);
-
-  let content = (
-    <h2
-      style={{
-        textAlign: "center",
-        padding: "1em",
-        border: "1px solid #339900",
-        backgroundColor: "#99cc33",
-      }}
-    >
-      No tasks availables. Add one?
-    </h2>
-  );
-
-  if (tasks.length > 0) {
-    content = <TaskList items={tasks} onDeleteItem={deleteItemHandler} />;
-  }
 
   return (
     <main>
@@ -81,7 +132,11 @@ const App = () => {
       {pending && <HourGlass />}
       <section className={classes["tasks-content"]}>
         {!pending && tasks !== null && error === null && (
-          <TaskList items={tasks} onDeleteItem={deleteItemHandler} />
+          <TaskList
+            items={tasks}
+            onDeleteItem={deleteItemHandler}
+            onEditItem={updateItemHandler}
+          />
         )}
         {!pending && tasks === null && error === null && (
           <h2

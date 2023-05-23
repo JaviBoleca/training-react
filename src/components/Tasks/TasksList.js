@@ -1,17 +1,17 @@
-import Item from './Item';
+import Item from "./Item";
 
-const TasksList = props => {
+const TasksList = (props) => {
   return (
     <ul className="task-list">
-      {props.items.map((task, index) => (
+      {Object.keys(props.items).map((key, index) => (
         <Item
-          key={task.id}
-          id={task.id}
+          key={key}
+          id={key}
+          title={props.items[key].text}
+          even={index % 2 === 0}
+          onEdit={props.onEditItem}
           onDelete={props.onDeleteItem}
-          even={(index % 2) === 0}
-        >
-          {task.text}
-        </Item>
+        />
       ))}
     </ul>
   );

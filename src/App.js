@@ -14,7 +14,7 @@ const App = () => {
     setError(null);
     try {
       const response = await fetch(
-        "https://task-list-4df55-default-rtdb.europe-west1.firebasedatabase.app/tasks.json"
+        "https://task-list-5df3b-default-rtdb.europe-west1.firebasedatabase.app/tasks.json"
       );
       if (!response.ok) {
         throw new Error("Something went wrong!");
@@ -29,7 +29,7 @@ const App = () => {
     }
     setTimeout(() => {
       setPending(false);
-    }, 1000);
+    }, 5000);
     //setPending(false);
   };
 
@@ -38,7 +38,7 @@ const App = () => {
     setError(null);
     try {
       const response = await fetch(
-        "https://task-list-4df55-default-rtdb.europe-west1.firebasedatabase.app/tasks.json",
+        "https://task-list-5df3b-default-rtdb.europe-west1.firebasedatabase.app/tasks.json",
         {
           method: "POST",
           headers: {
@@ -73,7 +73,8 @@ const App = () => {
     setError(null);
     try {
       const response = await fetch(
-        `https://task-list-4df55-default-rtdb.europe-west1.firebasedatabase.app/tasks/${taskId}.json`,
+        `https://task-list-5df3b-default-rtdb.europe-west1.firebasedatabase.app/tasks/${taskId}.json`,
+        
         {
           method: "DELETE",
         }
@@ -97,7 +98,8 @@ const App = () => {
     setError(null);
     try {
       const response = await fetch(
-        `https://task-list-4df55-default-rtdb.europe-west1.firebasedatabase.app/tasks/${id}.json`,
+        `https://task-list-5df3b-default-rtdb.europe-west1.firebasedatabase.app/tasks/${id}.json`,
+        
         {
           method: "PATCH",
           headers: {

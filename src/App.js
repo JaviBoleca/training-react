@@ -1,130 +1,41 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import useFetch from "./hooks/useFetch";
 import TaskList from "./components/Tasks/TasksList";
 import TasksInput from "./components/Tasks/TasksInput";
 import classes from "./App.module.css";
 import HourGlass from "./components/UI/Spinners/HourGlass";
 
+const URL = {
+  baseURL:
+    "https://task-list-4df55-default-rtdb.europe-west1.firebasedatabase.app",
+  endpoint: "/tasks",
+};
+
 const App = () => {
-  const [tasks, setNewTask] = useState({});
-  const [pending, setPending] = useState(false);
-  const [error, setError] = useState(null);
+  const { info, pending, error, fetchHandler } = useFetch(URL.baseURL);
 
-  const fetchTasksHandler = async () => {
-    setPending(true);
-    setError(null);
-    try {
-      const response = await fetch(
-        "https://task-list-5df3b-default-rtdb.europe-west1.firebasedatabase.app/tasks.json"
-      );
-      if (!response.ok) {
-        throw new Error("Something went wrong!");
-      }
-      const data = await response.json();
-      // console.log(data);
-      setNewTask(data);
-    } catch (error) {
-      setError({
-        message: error.message || "Something went wrong!",
-      });
-    }
-    setTimeout(() => {
-      setPending(false);
-    }, 5000);
-    //setPending(false);
-  };
-
-  const postTasksHandler = async (task) => {
-    setPending(true);
-    setError(null);
-    try {
-      const response = await fetch(
-        "https://task-list-5df3b-default-rtdb.europe-west1.firebasedatabase.app/tasks.json",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(task),
-        }
-      );
-      if (!response.ok) {
-        throw new Error("Something went wrong! Can't add new task.");
-      }
-      fetchTasksHandler();
-    } catch (error) {
-      setError({
-        message: error.message || "Something went wrong!",
-      });
-    }
-
-    setPending(false);
-  };
-
-  const addTaskHandler = (enteredText) => {
+  const addTaskHandler = async (enteredText) => {
     let newTask = {
       text: enteredText,
       id: Math.random().toString(16).substring(2),
     };
-    postTasksHandler(newTask);
+    await fetchHandler(`${URL.endpoint}.json`, "POST", newTask);
+    await fetchHandler(`${URL.endpoint}.json`, "GET");
   };
 
-  const deleteItemHandler = async (taskId) => {
-    setPending(true);
-    setError(null);
-    try {
-      const response = await fetch(
-        `https://task-list-5df3b-default-rtdb.europe-west1.firebasedatabase.app/tasks/${taskId}.json`,
-        
-        {
-          method: "DELETE",
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error("Something went wrong! Can't delete task.");
-      }
-
-      fetchTasksHandler();
-    } catch (error) {
-      setError({
-        message: error.message || "Something went wrong!",
-      });
-    }
-    setPending(false);
+  const deleteItemHandler = async (id) => {
+    await fetchHandler(`${URL.endpoint}/${id}.json`, "DELETE");
+    await fetchHandler(`${URL.endpoint}.json`, "GET");
   };
 
-  const updateItemHandler = async (id,text) => {
-    setPending(true);
-    setError(null);
-    try {
-      const response = await fetch(
-        `https://task-list-5df3b-default-rtdb.europe-west1.firebasedatabase.app/tasks/${id}.json`,
-        
-        {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({text}),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error("Something went wrong! Can't update task.");
-      }
-
-      fetchTasksHandler();
-    } catch (error) {
-      setError({
-        message: error.message || "Something went wrong!",
-      });
-    }
-    setPending(false);
+  const updateItemHandler = async (id, text) => {
+    await fetchHandler(`${URL.endpoint}/${id}.json`, "UPDATE", { text });
+    await fetchHandler(`${URL.endpoint}.json`, "GET");
   };
 
   useEffect(() => {
-    fetchTasksHandler();
-  }, []);
+    fetchHandler(`${URL.endpoint}.json`, "GET");
+  }, [fetchHandler]);
 
   return (
     <main>
@@ -133,14 +44,14 @@ const App = () => {
       </section>
       {pending && <HourGlass />}
       <section className={classes["tasks-content"]}>
-        {!pending && tasks !== null && error === null && (
+        {!pending && info !== null && error === null && (
           <TaskList
-            items={tasks}
+            items={info}
             onDeleteItem={deleteItemHandler}
             onEditItem={updateItemHandler}
           />
         )}
-        {!pending && tasks === null && error === null && (
+        {!pending && info === null && error === null && (
           <h2
             style={{
               textAlign: "center",

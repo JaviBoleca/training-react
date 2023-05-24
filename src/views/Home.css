@@ -1,0 +1,26 @@
+.user{
+    padding: 2em;
+}
+
+.user h3{
+    font-size: 2.5em;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+}
+
+.user ul{
+    background-color: var(--gray);
+    padding: 1em 2em;
+    border-radius: 0.5em;
+}
+.user ul li{
+    font-size: 1.2em;
+    font-weight: 300;
+    margin-bottom: 0.5em;
+    color: var(--green);
+}
+.user li strong{
+    font-weight: 400;
+    margin-right: 0.5em;
+    color: var(--dark);
+}

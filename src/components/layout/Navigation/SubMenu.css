@@ -1,0 +1,10 @@
+.submenu {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.submenu li a {
+  margin-right: 1em;
+  color: #a6c017;
+  text-decoration: underline;
+}

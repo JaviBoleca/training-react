@@ -14,7 +14,7 @@ const useFetch = (baseURL) => {
       try {
         switch (action) {
           case "GET":
-            result = await Fetch.get(baseURL + enpoint);
+            result = await Fetch.get(baseURL + enpoint);//llama a la clase Fetch y al metodo get pasandole la url
             setInfo(result);
             break;
           case "POST":

@@ -24,8 +24,9 @@ const App = () => {
   };
 
   const deleteItemHandler = async (id) => {
-    await fetchHandler(`${URL.endpoint}/${id}.json`, "DELETE");
-    await fetchHandler(`${URL.endpoint}.json`, "GET");
+    await fetchHandler(`${URL.endpoint}/${id}.json`, "DELETE"); //llama a fetchHandler
+    await fetchHandler(`${URL.endpoint}.json`, "GET"); //Al agregar ".json" al final de la URL, se le está indicando a
+    //la API que se espera que los datos se envíen o reciban en formato JSON.
   };
 
   const updateItemHandler = async (id, text) => {

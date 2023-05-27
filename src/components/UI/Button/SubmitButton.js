@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-
+/**
+ * @description Styled componente para el botón de envío de formularios
+ * @param {string} type Tipo de botón
+ */
 const SubmitButton = styled.button.attrs(props =>({
   type: props.type || 'button',
 }))`

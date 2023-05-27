@@ -1,84 +1,63 @@
 import { useEffect } from "react";
 import useFetch from "./hooks/useFetch";
-import TaskList from "./components/Tasks/TasksList";
-import TasksInput from "./components/Tasks/TasksInput";
+import HourGlass from "./components/UI/Spinner/HourGlass";
+import TasksList from "./components/Tasks/TasksList";
+import TasksForm from "./components/Tasks/TasksForm";
 import classes from "./App.module.css";
-import HourGlass from "./components/UI/Spinners/HourGlass";
-
-const URL = {
-  baseURL:
-    "https://task-list-4df55-default-rtdb.europe-west1.firebasedatabase.app",
-  endpoint: "/tasks",
-};
 
 const App = () => {
-  const { info, pending, error, fetchHandler } = useFetch(URL.baseURL);
+  const { pending, error, tasks, fetchTasksHandler } = useFetch();
 
-  const addTaskHandler = async (enteredText) => {
-    let newTask = {
-      text: enteredText,
-      id: Math.random().toString(16).substring(2),
-    };
-    await fetchHandler(`${URL.endpoint}.json`, "POST", newTask);
-    await fetchHandler(`${URL.endpoint}.json`, "GET");
+  const addTaskHandler = (body) => {
+    // enviar la petición POST
+    fetchTasksHandler("POST", body);
   };
 
-  const deleteItemHandler = async (id) => {
-    await fetchHandler(`${URL.endpoint}/${id}.json`, "DELETE"); //llama a fetchHandler
-    await fetchHandler(`${URL.endpoint}.json`, "GET"); //Al agregar ".json" al final de la URL, se le está indicando a
-    //la API que se espera que los datos se envíen o reciban en formato JSON.
+  const deleteItemHandler = (id) => {
+    // eliminar la tarea
+    fetchTasksHandler("DELETE", {}, id);
   };
 
-  const updateItemHandler = async (id, text) => {
-    await fetchHandler(`${URL.endpoint}/${id}.json`, "UPDATE", { text });
-    await fetchHandler(`${URL.endpoint}.json`, "GET");
+  const updateItemHandler = (body, id) => {
+    // actualizar la tarea
+    fetchTasksHandler("PATCH", body, id);
   };
 
   useEffect(() => {
-    fetchHandler(`${URL.endpoint}.json`, "GET");
-  }, [fetchHandler]);
+    fetchTasksHandler();
+  }, []);
 
   return (
     <main>
       <section className={classes["task-form"]}>
-        <TasksInput onAddTask={addTaskHandler} />
+        <TasksForm onAddTask={addTaskHandler} />
       </section>
-      {pending && <HourGlass />}
+      {
+        // mientras se carga la lista de tareas, se muestra el spinner
+        pending && <HourGlass />
+      }
       <section className={classes["tasks-content"]}>
-        {!pending && info !== null && error === null && (
-          <TaskList
-            items={info}
-            onDeleteItem={deleteItemHandler}
-            onEditItem={updateItemHandler}
-          />
-        )}
-        {!pending && info === null && error === null && (
-          <h2
-            style={{
-              textAlign: "center",
-              padding: "1em",
-              border: "1px solid #339900",
-              backgroundColor: "#99cc33",
-            }}
-          >
-            No tasks availables. Add one?
-          </h2>
-        )}
-        {!pending && error !== null && (
-          <h2
-            style={{
-              textAlign: "center",
-              padding: "1em",
-              border: "1px solid #ff0000",
-              backgroundColor: "#ff6666",
-            }}
-          >
-            {error.message}
-          </h2>
-        )}
+        {
+          // si hay tareas, y no hay errores, y no está cargando, se muestran las tareas
+          !pending && !error && tasks.length > 0 && (
+            <TasksList
+              items={tasks}
+              onDeleteItem={deleteItemHandler}
+              onUpdateItem={updateItemHandler}
+            />
+          )
+        }
+        {
+          // si no hay tareas, y no hay errores, y no está cargando, se muestra el mensaje de que no hay tareas
+          !pending && !error && tasks.length === 0 && (
+            <p className={classes["no-tasks"]}>No pending tasks!</p>
+          )
+        }
+        {
+          // si hay errores, se muestra el mensaje de error
+          error && <p className={classes["error"]}>{error.message}</p>
+        }
       </section>
     </main>
   );
 };
-
-export default App;
